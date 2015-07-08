@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">Lincoln Oven Capacity Calculator</string>
+	<string name="app_name">Lincoln Ovens</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+	<string name="action_settings">Settings</string>
+	<string name="logo_description">Manitowoc Logo</string>
+	<string name="capacity_calculator_button">Capacity Calculator</string>
+	<string name="oven_comparison_button">Oven Comparison</string>
+	<string name="spec_sheet_links_button">Spec Sheet Links</string>
+	<string name="action_search">Search</string>
+	<string name="title_activity_capacity_calculator">Capacity Calculator</string>
+
+	<string-array name="oven_number_spinner_contents">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>Custom</item>
+	</string-array>
 </resources>

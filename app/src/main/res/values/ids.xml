@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="manitowoc_logo" type="id">manitowoc_logo</item>
+    <item name="oven_comparison_button" type="id">oven_comparison_button</item>
+    <item name="capacity_calculator_button" type="id">capacity_calculator_button</item>
+    <item name="spec_sheet_link_button" type="id">spec_sheet_link_button</item>
+</resources>
