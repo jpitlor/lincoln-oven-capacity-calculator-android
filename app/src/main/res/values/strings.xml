@@ -9,12 +9,17 @@
 	<string name="action_search">Search</string>
 	<string name="title_activity_capacity_calculator">Capacity Calculator</string>
 
-	<string-array name="oven_number_spinner_contents">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-		<item>4</item>
-		<item>5</item>
-		<item>Custom</item>
+	<string name="belt_width_label">Belt Width:</string>
+	<string name="oven_capacity_label">Oven Capacity:</string>
+	<string name="bake_time_label">Bake Time:</string>
+	<string name="pan_type_label">Pan Type:</string>
+	<string name="pan_diameter_label">Pan Diameter:</string>
+	<string name="pan_width_label">Pan Width:</string>
+	<string name="pan_length_label">Pan Length:</string>
+	<string name="title_activity_spec_sheet_links">Spec Sheet Links</string>
+
+	<string-array name="pan_types">
+		<item>Round</item>
+		<item>Rectangular</item>
 	</string-array>
 </resources>
