@@ -2,6 +2,7 @@ package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,17 +36,20 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
+		switch (item.getItemId()) {
+			case R.id.action_main_menu:
+				Intent intent = new Intent(this, MainMenu.class);
+				startActivity(intent);
+				return true;
+			case R.id.action_exit:
+				Intent intentt = new Intent(Intent.ACTION_MAIN);
+				intentt.addCategory(Intent.CATEGORY_HOME);
+				intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intentt);
+				return true;
+			default:
+				return true;
 		}
-
-		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -70,7 +74,7 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 			length.setVisibility(View.INVISIBLE);
 			lengthLabel.setVisibility(View.INVISIBLE);
-		} else if (position == 2){ // Rectangular pan
+		} else if (position == 2) { // Rectangular pan
 			diameter.setVisibility(View.INVISIBLE);
 			diameterLabel.setVisibility(View.INVISIBLE);
 
@@ -102,7 +106,7 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 			double diameter = Double.parseDouble(((EditText) findViewById(R.id.pan_diameter)).getText().toString());
 
 			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, diameter).calculateCapacity();
-		} else if (panTypeSpinner.getSelectedItemPosition() == 2){// Rectangular pan
+		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {// Rectangular pan
 			double length = Double.parseDouble(((EditText) findViewById(R.id.pan_length)).getText().toString());
 			double width = Double.parseDouble(((EditText) findViewById(R.id.pan_width)).getText().toString());
 
