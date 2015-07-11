@@ -1,140 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 				android:layout_width="match_parent"
-				android:layout_height="match_parent">
+				android:layout_height="match_parent"
+				android:paddingLeft="20dp"
+				android:paddingStart="20dp"
+				android:paddingRight="30dp"
+				android:paddingEnd="30dp"
+				android:paddingTop="20dp"
+				android:paddingBottom="20dp">
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/belt_width_label"
+			android:id="@id/belt_width_label"
 			android:text="@string/belt_width_label"
 			android:textSize="25sp"
-			android:gravity="center"
-			android:labelFor="@+id/belt_width"/>
+			android:labelFor="@id/belt_width"
+			android:layout_marginBottom="15dp"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/belt_width"
+			android:id="@id/belt_width"
 			android:inputType="number"
 			android:layout_toEndOf="@id/belt_width_label"
 			android:layout_toRightOf="@id/belt_width_label"
-			android:textSize="25sp"/>
+			android:textSize="25sp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/oven_capacity_label"
+			android:id="@id/oven_capacity_label"
 			android:text="@string/oven_capacity_label"
 			android:layout_below="@id/belt_width_label"
 			android:textSize="25sp"
-			android:gravity="center"
-			android:labelFor="@+id/oven_capacity_label"/>
+			android:labelFor="@id/oven_capacity"
+			android:layout_marginBottom="15dp"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/oven_capacity"
+			android:id="@id/oven_capacity"
 			android:inputType="number"
 			android:layout_toEndOf="@id/oven_capacity_label"
 			android:layout_toRightOf="@id/oven_capacity_label"
 			android:layout_below="@id/belt_width"
-			android:textSize="25sp"/>
+			android:textSize="25sp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/bake_time_label"
+			android:id="@id/bake_time_label"
 			android:text="@string/bake_time_label"
 			android:layout_below="@id/oven_capacity_label"
 			android:textSize="25sp"
-			android:gravity="center"
-			android:labelFor="@+id/bake_time"/>
+			android:labelFor="@id/bake_time"
+			android:layout_marginBottom="15dp"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/bake_time"
+			android:id="@id/bake_time"
 			android:inputType="number"
 			android:layout_toEndOf="@id/bake_time_label"
 			android:layout_toRightOf="@id/bake_time_label"
 			android:layout_below="@id/oven_capacity"
-			android:textSize="25sp"/>
+			android:textSize="25sp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/pan_type_label"
+			android:id="@id/pan_type_label"
 			android:text="@string/pan_type_label"
 			android:layout_below="@id/bake_time_label"
 			android:textSize="25sp"
-			android:gravity="center"
-			android:labelFor="@+id/pan_type"/>
+			android:labelFor="@id/pan_type"
+			android:layout_marginBottom="15dp"/>
 	<Spinner
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/pan_type"
+			android:id="@id/pan_type"
 			android:layout_toEndOf="@id/pan_type_label"
 			android:layout_toRightOf="@id/pan_type_label"
 			android:layout_below="@id/bake_time"
-			android:textSize="25sp"/>
+			android:textSize="25sp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/pan_diameter_label"
+			android:id="@id/pan_diameter_label"
 			android:text="@string/pan_diameter_label"
 			android:layout_below="@id/pan_type_label"
 			android:textSize="25sp"
-			android:gravity="center"
 			android:visibility="invisible"
-			android:labelFor="@+id/pan_diameter"/>
+			android:labelFor="@id/pan_diameter"
+			android:layout_marginBottom="15dp"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/pan_diameter"
+			android:id="@id/pan_diameter"
 			android:inputType="number"
 			android:layout_toEndOf="@id/pan_diameter_label"
 			android:layout_toRightOf="@id/pan_diameter_label"
 			android:layout_below="@id/pan_type"
 			android:textSize="25sp"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/pan_width_label"
+			android:id="@id/pan_width_label"
 			android:text="@string/pan_width_label"
 			android:layout_below="@id/pan_type_label"
 			android:textSize="25sp"
-			android:gravity="center"
 			android:visibility="invisible"
-			android:labelFor="@+id/pan_width"/>
+			android:labelFor="@id/pan_width"
+			android:layout_marginBottom="15dp"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/pan_width"
+			android:id="@id/pan_width"
 			android:inputType="number"
 			android:layout_toEndOf="@id/pan_width_label"
 			android:layout_toRightOf="@id/pan_width_label"
 			android:layout_below="@id/pan_type"
 			android:textSize="25sp"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginBottom="15dp"
+			android:layout_marginLeft="15dp"/>
 
 	<TextView
 			android:layout_height="50sp"
 			android:layout_width="wrap_content"
-			android:id="@+id/pan_length_label"
+			android:id="@id/pan_length_label"
 			android:text="@string/pan_length_label"
 			android:layout_below="@id/pan_width_label"
 			android:textSize="25sp"
-			android:gravity="center"
 			android:visibility="invisible"
-			android:labelFor="@+id/pan_length"/>
+			android:labelFor="@id/pan_length"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
-			android:id="@+id/pan_length"
+			android:id="@id/pan_length"
 			android:inputType="number"
 			android:layout_toEndOf="@id/pan_length_label"
 			android:layout_toRightOf="@id/pan_length_label"
 			android:layout_below="@id/pan_width"
 			android:textSize="25sp"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:layout_marginLeft="15dp"/>
+
+	<Button
+			android:layout_height="100sp"
+			android:layout_width="match_parent"
+			android:layout_alignParentBottom="true"
+			android:text="@string/calculate_button"
+			android:textSize="25sp"
+			android:gravity="center"
+			android:onClick="calculate" />
 </RelativeLayout>

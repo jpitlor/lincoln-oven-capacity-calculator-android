@@ -1,29 +1,29 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
 
-public class CapacityCalculatorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class CapacityCalculatorActivity extends Activity implements AdapterView.OnItemSelectedListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.capacity_calculator);
+		setContentView(R.layout.layout_capacity_calculator);
 
 		Spinner spinner = (Spinner) findViewById(R.id.pan_type);
 		ArrayAdapter<CharSequence> adapter;
 		adapter = ArrayAdapter.createFromResource(this, R.array.pan_types,
-		                                          android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		                                          /* android.R.layout.simple_spinner_item); */
+		                                          R.layout.layout_spinner);
+		adapter.setDropDownViewResource(R.layout.layout_spinner);
+		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
-
-		findViewById(R.id.pan_diameter_label).setVisibility(View.INVISIBLE);
-		findViewById(R.id.pan_diameter).setVisibility(View.INVISIBLE);
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class CapacityCalculatorActivity extends AppCompatActivity implements Ada
 		TextView lengthLabel = (TextView) findViewById(R.id.pan_length_label);
 		EditText length = (EditText) findViewById(R.id.pan_length);
 
-		if (position == 0) { // Round pan
+		if (position == 1) { // Round pan
 			diameter.setText("");
 
 			diameter.setVisibility(View.VISIBLE);
@@ -70,7 +70,7 @@ public class CapacityCalculatorActivity extends AppCompatActivity implements Ada
 
 			length.setVisibility(View.INVISIBLE);
 			lengthLabel.setVisibility(View.INVISIBLE);
-		} else { // The position was 1 (Rectangular pan)
+		} else if (position == 2){ // Rectangular pan
 			diameter.setVisibility(View.INVISIBLE);
 			diameterLabel.setVisibility(View.INVISIBLE);
 
@@ -88,5 +88,33 @@ public class CapacityCalculatorActivity extends AppCompatActivity implements Ada
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
 		// Do nothing
+	}
+
+	public void calculate(View view) {
+		double beltWidth = Double.parseDouble(((EditText) findViewById(R.id.belt_width)).getText().toString());
+		double ovenCapacity = Double.parseDouble(((EditText) findViewById(R.id.oven_capacity)).getText().toString());
+		double bakeTime = Double.parseDouble(((EditText) findViewById(R.id.bake_time)).getText().toString());
+
+		double capacity;
+
+		Spinner panTypeSpinner = (Spinner) findViewById(R.id.pan_type);
+		if (panTypeSpinner.getSelectedItemPosition() == 1) { // Round pan
+			double diameter = Double.parseDouble(((EditText) findViewById(R.id.pan_diameter)).getText().toString());
+
+			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, diameter).calculateCapacity();
+		} else if (panTypeSpinner.getSelectedItemPosition() == 2){// Rectangular pan
+			double length = Double.parseDouble(((EditText) findViewById(R.id.pan_length)).getText().toString());
+			double width = Double.parseDouble(((EditText) findViewById(R.id.pan_width)).getText().toString());
+
+			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, length, width).calculateCapacity();
+		} else {
+			capacity = 0.0;
+		}
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("The capacity is " + capacity);
+
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 }

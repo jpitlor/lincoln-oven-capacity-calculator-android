@@ -4,4 +4,20 @@
     <item name="oven_comparison_button" type="id">oven_comparison_button</item>
     <item name="capacity_calculator_button" type="id">capacity_calculator_button</item>
     <item name="spec_sheet_link_button" type="id">spec_sheet_link_button</item>
+    <item name="oven_capacity" type="id">oven_capacity</item>
+    <item name="oven_capacity_label" type="id">oven_capacity_label</item>
+    <item name="belt_width_label" type="id">belt_width_label</item>
+    <item name="belt_width" type="id">belt_width</item>
+    <item name="bake_time" type="id">bake_time</item>
+    <item name="bake_time_label" type="id">bake_time_label</item>
+    <item name="pan_width" type="id">pan_width</item>
+    <item name="pan_length_label" type="id">pan_length_label</item>
+    <item name="pan_length" type="id">pan_length</item>
+    <item name="pan_width_label" type="id">pan_width_label</item>
+    <item name="pan_type" type="id">pan_type</item>
+    <item name="pan_type_label" type="id">pan_type_label</item>
+    <item name="pan_diameter_label" type="id">pan_diameter_label</item>
+    <item name="pan_diameter" type="id">pan_diameter</item>
+    <item name="action_exit" type="id">action_exit</item>
+    <item name="action_main_menu" type="id">action_main_menu</item>
 </resources>

@@ -17,9 +17,23 @@
 	<string name="pan_width_label">Pan Width:</string>
 	<string name="pan_length_label">Pan Length:</string>
 	<string name="title_activity_spec_sheet_links">Spec Sheet Links</string>
+	<string name="calculate_button">Calculate</string>
+	<string name="action_exit">Exit</string>
+	<string name="action_main_menu">Main Menu</string>
 
 	<string-array name="pan_types">
+		<item>Select Pan Type</item>
 		<item>Round</item>
 		<item>Rectangular</item>
+	</string-array>
+
+	<string-array name="spec_sheets">
+		<item>I\'m a spec sheet!</item>
+		<item>So am I</item>
+		<item>But what about me</item>
+		<item>I am tired</item>
+		<item>Choose me</item>
+		<item>No me</item>
+		<item>Patrick thats a pickle</item>
 	</string-array>
 </resources>
