@@ -33,7 +33,6 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu_capacity_calculator, menu);
 		return true;
 	}
@@ -78,34 +77,47 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		TextView lengthLabel = (TextView) findViewById(R.id.pan_length_label);
 		EditText length = (EditText) findViewById(R.id.pan_length);
 
+		TextView diamUnit = (TextView) findViewById(R.id.unit_label_pan_diameter);
+		TextView lenUnit = (TextView) findViewById(R.id.unit_label_pan_length);
+		TextView widUnit = (TextView) findViewById(R.id.unit_label_pan_width);
+
 		if (position == 1) { // Round pan
 			diameter.setText("");
 			diameter.setVisibility(View.VISIBLE);
 			diameterLabel.setVisibility(View.VISIBLE);
+			diamUnit.setVisibility(View.VISIBLE);
 
+			widUnit.setVisibility(View.INVISIBLE);
 			widthLabel.setVisibility(View.INVISIBLE);
 			width.setVisibility(View.INVISIBLE);
 
+			lenUnit.setVisibility(View.INVISIBLE);
 			length.setVisibility(View.INVISIBLE);
 			lengthLabel.setVisibility(View.INVISIBLE);
 		} else if (position == 2) { // Rectangular pan
 			diameter.setVisibility(View.INVISIBLE);
 			diameterLabel.setVisibility(View.INVISIBLE);
+			diamUnit.setVisibility(View.INVISIBLE);
 
+			widUnit.setVisibility(View.VISIBLE);
 			width.setText("");
 			widthLabel.setVisibility(View.VISIBLE);
 			width.setVisibility(View.VISIBLE);
 
+			lenUnit.setVisibility(View.VISIBLE);
 			length.setText("");
 			length.setVisibility(View.VISIBLE);
 			lengthLabel.setVisibility(View.VISIBLE);
 		} else { // "Select Type"
 			diameter.setVisibility(View.INVISIBLE);
 			diameterLabel.setVisibility(View.INVISIBLE);
+			diamUnit.setVisibility(View.INVISIBLE);
 
+			widUnit.setVisibility(View.INVISIBLE);
 			widthLabel.setVisibility(View.INVISIBLE);
 			width.setVisibility(View.INVISIBLE);
 
+			lenUnit.setVisibility(View.INVISIBLE);
 			length.setVisibility(View.INVISIBLE);
 			lengthLabel.setVisibility(View.INVISIBLE);
 		}
@@ -148,11 +160,14 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 			capacity = 0.0;
 		}
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("The capacity is " + capacity);
-
-		AlertDialog dialog = builder.create();
-		dialog.show();
+		new AlertDialog.Builder(this)
+				.setMessage("The capacity is " + capacity + " pans/hour")
+				.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				}).show();
 	}
 
 	private boolean anyInputsBlank() {

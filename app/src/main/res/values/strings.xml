@@ -25,6 +25,8 @@
 
 	<string name="ok">OK</string>
 	<string name="cancel">Cancel</string>
+	<string name="unit_in">in.</string>
+	<string name="unit_min">min.</string>
 
 	<string-array name="pan_types">
 		<item>Select Pan Type</item>
@@ -76,4 +78,7 @@
 		<item>32</item>
 		<item>70</item>
 	</string-array>
+	<string name="title_activity_oven_comparison">OvenComparison</string>
+
+	<string name="hello_world">Hello world!</string>
 </resources>

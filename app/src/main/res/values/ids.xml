@@ -22,4 +22,10 @@
     <item name="action_main_menu" type="id">action_main_menu</item>
     <item name="action_clear" type="id">action_clear</item>
     <item name="action_use_model" type="id">action_clear</item>
+    <item name="unit_label_belt_width" type="id">in</item>
+    <item name="unit_label_oven_capacity" type="id">in_2</item>
+    <item name="unit_label_bake_time" type="id">min</item>
+    <item name="unit_label_pan_diameter" type="id">in_3</item>
+    <item name="unit_label_pan_width" type="id">in_4</item>
+    <item name="unit_label_pan_length" type="id">in_5</item>
 </resources>
