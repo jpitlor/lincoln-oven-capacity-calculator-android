@@ -117,14 +117,24 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 	}
 
 	public void calculate(View view) {
-		// TODO: Check to make sure all inputs exist - stop the user if one is empty
+		Spinner panTypeSpinner = (Spinner) findViewById(R.id.pan_type);
+		if (panTypeSpinner.getSelectedItemPosition() == 1) {
+			((EditText) findViewById(R.id.pan_length)).setText("0");
+			((EditText) findViewById(R.id.pan_width)).setText("0");
+		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {
+			((EditText) findViewById(R.id.pan_diameter)).setText("0");
+		}
+
+		if (anyInputsBlank()) {
+			throwError();
+			return;
+		}
 		double beltWidth = Double.parseDouble(((EditText) findViewById(R.id.belt_width)).getText().toString());
 		double ovenCapacity = Double.parseDouble(((EditText) findViewById(R.id.oven_capacity)).getText().toString());
 		double bakeTime = Double.parseDouble(((EditText) findViewById(R.id.bake_time)).getText().toString());
 
 		double capacity;
 
-		Spinner panTypeSpinner = (Spinner) findViewById(R.id.pan_type);
 		if (panTypeSpinner.getSelectedItemPosition() == 1) { // Round pan
 			double diameter = Double.parseDouble(((EditText) findViewById(R.id.pan_diameter)).getText().toString());
 
@@ -143,6 +153,40 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 		AlertDialog dialog = builder.create();
 		dialog.show();
+	}
+
+	private boolean anyInputsBlank() {
+		EditText beltWidth = (EditText) findViewById(R.id.belt_width);
+		boolean bw = beltWidth.getText().toString().equals("");
+
+		EditText ovenCapacity = (EditText) findViewById(R.id.oven_capacity);
+		boolean oc = ovenCapacity.getText().toString().equals("");
+
+		EditText bakeTime = (EditText) findViewById(R.id.bake_time);
+		boolean bt = bakeTime.getText().toString().equals("");
+
+		EditText diameter = (EditText) findViewById(R.id.pan_diameter);
+		boolean pd = diameter.getText().toString().equals("");
+
+		EditText length = (EditText) findViewById(R.id.pan_length);
+		boolean pl = length.getText().toString().equals("");
+
+		EditText width = (EditText) findViewById(R.id.pan_width);
+		boolean pw = width.getText().toString().equals("");
+
+		return bw || oc || bt || pd || pl || pw;
+	}
+
+	private void throwError() {
+		new AlertDialog.Builder(this)
+				.setTitle("Missing Inputs")
+				.setMessage("Please fill in all of the inputs, then try calculating the capacity again")
+				.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				}).show();
 	}
 
 	private Dialog getChooseModelDialog() {
