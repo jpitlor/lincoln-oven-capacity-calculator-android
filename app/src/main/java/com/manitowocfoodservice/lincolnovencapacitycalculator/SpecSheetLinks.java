@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +13,7 @@ import android.widget.ListView;
 /**
  * Created by Jordan on 7/8/2015.
  */
-public class SpecSheetLinks extends Activity implements AdapterView.OnItemSelectedListener {
+public class SpecSheetLinks extends Activity implements AdapterView.OnItemClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,14 +23,7 @@ public class SpecSheetLinks extends Activity implements AdapterView.OnItemSelect
 		                                                                     android.R.layout.simple_list_item_1);
 		ListView specSheetList = (ListView) findViewById(R.id.spec_sheet_link_list);
 		specSheetList.setAdapter(adapter);
-		specSheetList.setOnItemSelectedListener(this);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_capacity_calculator, menu);
-		return true;
+		specSheetList.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -53,18 +45,10 @@ public class SpecSheetLinks extends Activity implements AdapterView.OnItemSelect
 	}
 
 	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-		String URI = "http://www.google.com/";
-		switch (position) {
-			default:
-				break;
-		}
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		String URI = "http://www.lincolnfp.com/asset/?id=";
+		URI += getResources().getStringArray(R.array.spec_sheet_links)[position];
 		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URI));
 		startActivity(intent);
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
-
 	}
 }

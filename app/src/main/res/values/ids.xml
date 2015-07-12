@@ -20,4 +20,6 @@
     <item name="pan_diameter" type="id">pan_diameter</item>
     <item name="action_exit" type="id">action_exit</item>
     <item name="action_main_menu" type="id">action_main_menu</item>
+    <item name="action_clear" type="id">action_clear</item>
+    <item name="action_use_model" type="id">action_clear</item>
 </resources>

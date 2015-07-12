@@ -2,6 +2,12 @@
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto">
 	<!-- Search, should appear as action button -->
+	<item android:id="@id/action_use_model"
+		  android:title="@string/choose_model"
+		  app:showAsAction="ifRoom"/>
+	<item android:id="@id/action_clear"
+		  android:title="@string/clear"
+		  app:showAsAction="ifRoom"/>
 	<item android:id="@id/action_main_menu"
 		  android:title="@string/action_main_menu"
 		  app:showAsAction="never"/>

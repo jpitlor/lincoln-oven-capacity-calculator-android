@@ -5,7 +5,7 @@
 	<string name="logo_description">Manitowoc Logo</string>
 	<string name="capacity_calculator_button">Capacity Calculator</string>
 	<string name="oven_comparison_button">Oven Comparison</string>
-	<string name="spec_sheet_links_button">Spec Sheet Links</string>
+	<string name="spec_sheet_links_button">Spec Sheets</string>
 	<string name="action_search">Search</string>
 	<string name="title_activity_capacity_calculator">Capacity Calculator</string>
 
@@ -16,10 +16,15 @@
 	<string name="pan_diameter_label">Pan Diameter:</string>
 	<string name="pan_width_label">Pan Width:</string>
 	<string name="pan_length_label">Pan Length:</string>
-	<string name="title_activity_spec_sheet_links">Spec Sheet Links</string>
+	<string name="title_activity_spec_sheet_links">Spec Sheets</string>
 	<string name="calculate_button">Calculate</string>
 	<string name="action_exit">Exit</string>
 	<string name="action_main_menu">Main Menu</string>
+	<string name="choose_model">Choose Model</string>
+	<string name="clear">Clear</string>
+
+	<string name="ok">OK</string>
+	<string name="cancel">Cancel</string>
 
 	<string-array name="pan_types">
 		<item>Select Pan Type</item>
@@ -28,12 +33,47 @@
 	</string-array>
 
 	<string-array name="spec_sheets">
-		<item>I\'m a spec sheet!</item>
-		<item>So am I</item>
-		<item>But what about me</item>
-		<item>I am tired</item>
-		<item>Choose me</item>
-		<item>No me</item>
-		<item>Patrick thats a pickle</item>
+		<item>2500</item>
+		<item>Ventless 2500</item>
+		<item>1100</item>
+		<item>Ventless 1100</item>
+		<item>1400</item>
+		<item>1600</item>
+		<item>3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
+
+	<string-array name="spec_sheet_links">
+		<item>aximq</item>
+		<item>wymfv</item>
+		<item>edtmx</item>
+		<item>qampl</item>
+		<item>fcdcn</item>
+		<item>prgda</item>
+		<item>ojjww</item>
+		<item>cqier</item>
+		<item>hepix</item>
+	</string-array>
+
+	<string-array name="models">
+		<item>2500</item>
+		<item>1100</item>
+		<item>1400/1600/3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
+
+	<string-array name="model_details">
+		<item>16</item>
+		<item>20.5</item>
+		<item>18</item>
+		<item>28.25</item>
+		<item>32</item>
+		<item>40.1875</item>
+		<item>32</item>
+		<item>55</item>
+		<item>32</item>
+		<item>70</item>
 	</string-array>
 </resources>

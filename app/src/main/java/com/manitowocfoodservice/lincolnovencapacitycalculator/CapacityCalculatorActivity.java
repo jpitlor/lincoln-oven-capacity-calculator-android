@@ -2,6 +2,8 @@ package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +13,8 @@ import android.widget.*;
 
 
 public class CapacityCalculatorActivity extends Activity implements AdapterView.OnItemSelectedListener {
+	int position = 0;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,9 +51,20 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 				intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intentt);
 				return true;
-			default:
-				return true;
+			case R.id.action_use_model:
+				getChooseModelDialog().show();
+				break;
+			case R.id.action_clear:
+				((EditText) findViewById(R.id.belt_width)).setText("");
+				((EditText) findViewById(R.id.oven_capacity)).setText("");
+				((EditText) findViewById(R.id.bake_time)).setText("");
+				((EditText) findViewById(R.id.pan_diameter)).setText("");
+				((EditText) findViewById(R.id.pan_length)).setText("");
+				((EditText) findViewById(R.id.pan_width)).setText("");
+				((Spinner) findViewById(R.id.pan_type)).setSelection(0);
+				break;
 		}
+		return true;
 	}
 
 	@Override
@@ -65,7 +80,6 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 		if (position == 1) { // Round pan
 			diameter.setText("");
-
 			diameter.setVisibility(View.VISIBLE);
 			diameterLabel.setVisibility(View.VISIBLE);
 
@@ -78,14 +92,22 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 			diameter.setVisibility(View.INVISIBLE);
 			diameterLabel.setVisibility(View.INVISIBLE);
 
-			length.setText("");
 			width.setText("");
-
 			widthLabel.setVisibility(View.VISIBLE);
 			width.setVisibility(View.VISIBLE);
 
+			length.setText("");
 			length.setVisibility(View.VISIBLE);
 			lengthLabel.setVisibility(View.VISIBLE);
+		} else { // "Select Type"
+			diameter.setVisibility(View.INVISIBLE);
+			diameterLabel.setVisibility(View.INVISIBLE);
+
+			widthLabel.setVisibility(View.INVISIBLE);
+			width.setVisibility(View.INVISIBLE);
+
+			length.setVisibility(View.INVISIBLE);
+			lengthLabel.setVisibility(View.INVISIBLE);
 		}
 	}
 
@@ -95,6 +117,7 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 	}
 
 	public void calculate(View view) {
+		// TODO: Check to make sure all inputs exist - stop the user if one is empty
 		double beltWidth = Double.parseDouble(((EditText) findViewById(R.id.belt_width)).getText().toString());
 		double ovenCapacity = Double.parseDouble(((EditText) findViewById(R.id.oven_capacity)).getText().toString());
 		double bakeTime = Double.parseDouble(((EditText) findViewById(R.id.bake_time)).getText().toString());
@@ -120,5 +143,36 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 
 		AlertDialog dialog = builder.create();
 		dialog.show();
+	}
+
+	private Dialog getChooseModelDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Choose a Model");
+		builder.setSingleChoiceItems(R.array.models, 0, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				position = which;
+			}
+		});
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String beltWidth = getResources().getStringArray(R.array.model_details)[position * 2];
+				String ovenCapacity = getResources().getStringArray(R.array.model_details)[position * 2 + 1];
+
+				((EditText) findViewById(R.id.belt_width)).setText(beltWidth);
+				((EditText) findViewById(R.id.oven_capacity)).setText(ovenCapacity);
+
+				dialog.dismiss();
+			}
+		});
+		builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.dismiss();
+			}
+		});
+
+		return builder.create();
 	}
 }
