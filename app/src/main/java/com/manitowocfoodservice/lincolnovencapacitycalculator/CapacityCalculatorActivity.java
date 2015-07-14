@@ -216,8 +216,8 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				String beltWidth = getResources().getStringArray(R.array.model_details)[position * 2];
-				String ovenCapacity = getResources().getStringArray(R.array.model_details)[position * 2 + 1];
+				String beltWidth = getResources().getStringArray(R.array.model_sizes)[position * 2];
+				String ovenCapacity = getResources().getStringArray(R.array.model_sizes)[position * 2 + 1];
 
 				((EditText) findViewById(R.id.belt_width)).setText(beltWidth);
 				((EditText) findViewById(R.id.oven_capacity)).setText(ovenCapacity);

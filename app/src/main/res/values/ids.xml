@@ -28,4 +28,8 @@
     <item name="unit_label_pan_diameter" type="id">in_3</item>
     <item name="unit_label_pan_width" type="id">in_4</item>
     <item name="unit_label_pan_length" type="id">in_5</item>
+    <item name="toggleProperties" type="id">toggle_columns</item>
+    <item name="toggleOvens" type="id">toggle_rows</item>
+    <item name="comparison_grid" type="id">comparison_grid</item>
+    <item name="properties" type="id">properties</item>
 </resources>

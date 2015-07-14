@@ -37,6 +37,7 @@
 			android:layout_centerVertical="true"
 			android:padding="20dp"
 			android:text="@string/oven_comparison_button"
+			android:onClick="goToCompareOvens"
 			android:textSize="18sp"/>
 
 	<Button

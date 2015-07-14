@@ -16,7 +16,8 @@
 			android:text="@string/belt_width_label"
 			android:textSize="25sp"
 			android:labelFor="@id/belt_width"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -28,7 +29,9 @@
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:textColor="#FFFFFF"
+			android:backgroundTint="?android:textColorPrimary"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -38,7 +41,8 @@
 			android:layout_alignEnd="@id/belt_width"
 			android:layout_alignBottom="@id/belt_width"
 			android:id="@id/unit_label_belt_width"
-			android:textStyle="italic"/>
+			android:textStyle="italic"
+			android:textColor="?android:colorPrimary"/>
 
 	<TextView
 			android:layout_height="50sp"
@@ -48,7 +52,8 @@
 			android:layout_below="@id/belt_width_label"
 			android:textSize="25sp"
 			android:labelFor="@id/oven_capacity"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -61,7 +66,9 @@
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:backgroundTint="?android:textColorPrimary"
+			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -71,7 +78,8 @@
 			android:layout_alignEnd="@id/oven_capacity"
 			android:layout_alignBottom="@id/oven_capacity"
 			android:id="@id/unit_label_oven_capacity"
-			android:textStyle="italic"/>
+			android:textStyle="italic"
+			android:textColor="?android:colorPrimary"/>
 
 	<TextView
 			android:layout_height="50sp"
@@ -81,7 +89,8 @@
 			android:layout_below="@id/oven_capacity_label"
 			android:textSize="25sp"
 			android:labelFor="@id/bake_time"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -94,7 +103,9 @@
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:backgroundTint="?android:textColorPrimary"
+			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -104,7 +115,8 @@
 			android:layout_alignEnd="@id/bake_time"
 			android:layout_alignBottom="@id/bake_time"
 			android:id="@id/unit_label_bake_time"
-			android:textStyle="italic"/>
+			android:textStyle="italic"
+			android:textColor="?android:colorPrimary"/>
 
 	<TextView
 			android:layout_height="50sp"
@@ -114,7 +126,8 @@
 			android:layout_below="@id/bake_time_label"
 			android:textSize="25sp"
 			android:labelFor="@id/pan_type"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<Spinner
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -137,7 +150,8 @@
 			android:textSize="25sp"
 			android:visibility="invisible"
 			android:labelFor="@id/pan_diameter"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -151,7 +165,9 @@
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:backgroundTint="?android:textColorPrimary"
+			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -162,7 +178,8 @@
 			android:layout_alignBottom="@id/pan_diameter"
 			android:id="@id/unit_label_pan_diameter"
 			android:textStyle="italic"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:textColor="?android:colorPrimary"/>
 
 	<TextView
 			android:layout_height="50sp"
@@ -173,7 +190,8 @@
 			android:textSize="25sp"
 			android:visibility="invisible"
 			android:labelFor="@id/pan_width"
-			android:layout_marginBottom="15dp"/>
+			android:layout_marginBottom="15dp"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -187,7 +205,9 @@
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:backgroundTint="?android:textColorPrimary"
+			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -198,7 +218,8 @@
 			android:layout_alignBottom="@id/pan_width"
 			android:id="@id/unit_label_pan_width"
 			android:textStyle="italic"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:textColor="?android:colorPrimary"/>
 
 	<TextView
 			android:layout_height="50sp"
@@ -208,7 +229,8 @@
 			android:layout_below="@id/pan_width_label"
 			android:textSize="25sp"
 			android:visibility="invisible"
-			android:labelFor="@id/pan_length"/>
+			android:labelFor="@id/pan_length"
+			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -221,7 +243,9 @@
 			android:visibility="invisible"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
-			android:layout_marginLeft="15dp"/>
+			android:layout_marginLeft="15dp"
+			android:backgroundTint="?android:textColorPrimary"
+			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="50sp"
@@ -232,7 +256,8 @@
 			android:layout_alignBottom="@id/pan_length"
 			android:id="@id/unit_label_pan_length"
 			android:textStyle="italic"
-			android:visibility="invisible"/>
+			android:visibility="invisible"
+			android:textColor="?android:colorPrimary"/>
 
 	<Button
 			android:layout_height="100sp"

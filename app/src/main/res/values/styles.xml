@@ -7,4 +7,12 @@
 		<item name="android:homeAsUpIndicator">@mipmap/app_logo</item>
 		<item name="android:displayOptions">useLogo</item>
 	</style>
+
+	<style name="PropertiesTheme">
+		<item name="android:color">?android:colorPrimary</item>
+	</style>
+
+	<style name="ModelsTheme">
+		<item name="android:color">?android:textColorPrimary</item>
+	</style>
 </resources>

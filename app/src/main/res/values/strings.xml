@@ -28,12 +28,6 @@
 	<string name="unit_in">in.</string>
 	<string name="unit_min">min.</string>
 
-	<string-array name="pan_types">
-		<item>Select Pan Type</item>
-		<item>Round</item>
-		<item>Rectangular</item>
-	</string-array>
-
 	<string-array name="spec_sheets">
 		<item>2500</item>
 		<item>Ventless 2500</item>
@@ -45,7 +39,6 @@
 		<item>3255</item>
 		<item>3270</item>
 	</string-array>
-
 	<string-array name="spec_sheet_links">
 		<item>aximq</item>
 		<item>wymfv</item>
@@ -65,8 +58,7 @@
 		<item>3255</item>
 		<item>3270</item>
 	</string-array>
-
-	<string-array name="model_details">
+	<string-array name="model_sizes">
 		<item>16</item>
 		<item>20.5</item>
 		<item>18</item>
@@ -78,7 +70,87 @@
 		<item>32</item>
 		<item>70</item>
 	</string-array>
-	<string name="title_activity_oven_comparison">OvenComparison</string>
+	<string-array name="pan_types">
+		<item>Select Pan Type</item>
+		<item>Round</item>
+		<item>Rectangular</item>
+	</string-array>
 
-	<string name="hello_world">Hello world!</string>
+	<string-array name="models_extended">
+		<item>2500</item>
+		<item>1100</item>
+		<item>1400</item>
+		<item>1600</item>
+		<item>3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
+	<string-array name="properties">
+		<item>Model Name</item>
+		<item>Belt Width</item>
+		<item>Chamber Length</item>
+		<item>Stacking</item>
+		<item>Gas/Electric</item>
+		<item>Electric Ventless</item>
+		<item>Half Pass Door</item>
+	</string-array>
+	<string-array name="belt_widths">
+		<item>16</item>
+		<item>18</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+	</string-array>
+	<string-array name="chamber_lengths">
+		<item>20</item>
+		<item>28</item>
+		<item>40</item>
+		<item>40</item>
+		<item>40</item>
+		<item>55</item>
+		<item>70</item>
+	</string-array>
+	<string-array name="stacking">
+		<item>Double</item>
+		<item>Triple</item>
+		<item>Double</item>
+		<item>Triple</item>
+		<item>Triple</item>
+		<item>Triple</item>
+		<item>Triple</item>
+	</string-array>
+	<string-array name="gas_elec">
+		<item>Electric</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Gas</item>
+		<item>Gas</item>
+	</string-array>
+	<string-array name="elec_ventless_avail">
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+	</string-array>
+	<string-array name="half_pass_door">
+		<item>No</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+	</string-array>
+
+	<string name="title_activity_oven_comparison">Oven Comparison</string>
+
+	<string name="toggle_columns">Toggle Properties</string>
+	<string name="ovens">Ovens</string>
 </resources>
