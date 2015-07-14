@@ -1,5 +1,9 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 /**
  * Created by Jordan on 7/8/2015.
  */
@@ -43,7 +47,8 @@ public class CapacityCalculator {
 	}
 
 	public double calculateCapacity() {
-		return isRound ? IRC() : ISC();
+		double result = isRound ? IRC() : ISC();
+		return (double) Math.round(result * 10) / 10;
 	}
 
 	private double ROUNDVEL() {

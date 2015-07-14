@@ -10,12 +10,12 @@
 	<string name="title_activity_capacity_calculator">Capacity Calculator</string>
 
 	<string name="belt_width_label">Belt Width:</string>
-	<string name="oven_capacity_label">Oven Capacity:</string>
+	<string name="oven_capacity_label">Chamber Length:</string>
 	<string name="bake_time_label">Bake Time:</string>
 	<string name="pan_type_label">Pan Type:</string>
-	<string name="pan_diameter_label">Pan Diameter:</string>
-	<string name="pan_width_label">Pan Width:</string>
-	<string name="pan_length_label">Pan Length:</string>
+	<string name="pan_diameter_label">Diameter:</string>
+	<string name="pan_width_label">Width:</string>
+	<string name="pan_length_label">Length:</string>
 	<string name="title_activity_spec_sheet_links">Spec Sheets</string>
 	<string name="calculate_button">Calculate</string>
 	<string name="action_exit">Exit</string>

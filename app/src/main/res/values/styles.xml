@@ -3,7 +3,5 @@
 		<item name="android:colorPrimary">@color/primary</item>
 		<item name="android:colorPrimaryDark">@color/primaryDark</item>
 		<item name="android:textColorPrimary">@color/textPrimary</item>
-		<item name="android:homeAsUpIndicator">@mipmap/app_logo</item>
-		<item name="android:displayOptions">useLogo</item>
 	</style>
 </resources>

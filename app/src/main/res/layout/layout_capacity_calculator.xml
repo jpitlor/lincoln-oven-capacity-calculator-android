@@ -10,22 +10,22 @@
 				android:paddingBottom="20dp"
 				android:background="@drawable/capacity_calculator_background">
 	<TextView
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:layout_width="wrap_content"
 			android:id="@id/belt_width_label"
 			android:text="@string/belt_width_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:labelFor="@id/belt_width"
 			android:layout_marginBottom="15dp"
 			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:id="@id/belt_width"
 			android:inputType="numberDecimal"
 			android:layout_toEndOf="@id/belt_width_label"
 			android:layout_toRightOf="@id/belt_width_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
@@ -34,9 +34,9 @@
 			android:backgroundTint="?android:textColorPrimary"/>
 	<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:text="@string/unit_in"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignRight="@id/belt_width"
 			android:layout_alignEnd="@id/belt_width"
 			android:layout_alignBottom="@id/belt_width"
@@ -45,24 +45,24 @@
 			android:textColor="?android:colorPrimary"/>
 
 	<TextView
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:layout_width="wrap_content"
 			android:id="@id/oven_capacity_label"
 			android:text="@string/oven_capacity_label"
 			android:layout_below="@id/belt_width_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:labelFor="@id/oven_capacity"
 			android:layout_marginBottom="15dp"
 			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:id="@id/oven_capacity"
 			android:inputType="numberDecimal"
 			android:layout_toEndOf="@id/oven_capacity_label"
 			android:layout_toRightOf="@id/oven_capacity_label"
 			android:layout_below="@id/belt_width"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
@@ -71,9 +71,9 @@
 			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:text="@string/unit_in"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignRight="@id/oven_capacity"
 			android:layout_alignEnd="@id/oven_capacity"
 			android:layout_alignBottom="@id/oven_capacity"
@@ -82,24 +82,24 @@
 			android:textColor="?android:colorPrimary"/>
 
 	<TextView
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:layout_width="wrap_content"
 			android:id="@id/bake_time_label"
 			android:text="@string/bake_time_label"
 			android:layout_below="@id/oven_capacity_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:labelFor="@id/bake_time"
 			android:layout_marginBottom="15dp"
 			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:id="@id/bake_time"
 			android:inputType="numberDecimal"
 			android:layout_toEndOf="@id/bake_time_label"
 			android:layout_toRightOf="@id/bake_time_label"
 			android:layout_below="@id/oven_capacity"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
@@ -108,9 +108,9 @@
 			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:text="@string/unit_min"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignRight="@id/bake_time"
 			android:layout_alignEnd="@id/bake_time"
 			android:layout_alignBottom="@id/bake_time"
@@ -119,48 +119,48 @@
 			android:textColor="?android:colorPrimary"/>
 
 	<TextView
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:layout_width="wrap_content"
 			android:id="@id/pan_type_label"
 			android:text="@string/pan_type_label"
 			android:layout_below="@id/bake_time_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:labelFor="@id/pan_type"
 			android:layout_marginBottom="15dp"
 			android:textColor="?android:colorPrimary"/>
 	<Spinner
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:id="@id/pan_type"
 			android:layout_toEndOf="@id/pan_type_label"
 			android:layout_toRightOf="@id/pan_type_label"
 			android:layout_below="@id/bake_time"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
 			android:layout_marginBottom="15dp"
 			android:layout_marginLeft="15dp"/>
 
 	<TextView
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:layout_width="wrap_content"
 			android:id="@id/pan_diameter_label"
 			android:text="@string/pan_diameter_label"
 			android:layout_below="@id/pan_type_label"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:visibility="invisible"
 			android:labelFor="@id/pan_diameter"
 			android:layout_marginBottom="15dp"
 			android:textColor="?android:colorPrimary"/>
 	<EditText
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:id="@id/pan_diameter"
 			android:inputType="numberDecimal"
 			android:layout_toEndOf="@id/pan_diameter_label"
 			android:layout_toRightOf="@id/pan_diameter_label"
 			android:layout_below="@id/pan_type"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:visibility="invisible"
 			android:layout_alignParentEnd="true"
 			android:layout_alignParentRight="true"
@@ -170,9 +170,9 @@
 			android:textColor="#FFFFFF"/>
 	<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="50sp"
+			android:layout_height="40sp"
 			android:text="@string/unit_in"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:layout_alignRight="@id/pan_diameter"
 			android:layout_alignEnd="@id/pan_diameter"
 			android:layout_alignBottom="@id/pan_diameter"
@@ -180,91 +180,87 @@
 			android:textStyle="italic"
 			android:visibility="invisible"
 			android:textColor="?android:colorPrimary"/>
-
-	<TextView
-			android:layout_height="50sp"
-			android:layout_width="wrap_content"
-			android:id="@id/pan_width_label"
-			android:text="@string/pan_width_label"
-			android:layout_below="@id/pan_type_label"
-			android:textSize="25sp"
-			android:visibility="invisible"
-			android:labelFor="@id/pan_width"
-			android:layout_marginBottom="15dp"
-			android:textColor="?android:colorPrimary"/>
-	<EditText
-			android:layout_width="wrap_content"
-			android:layout_height="50sp"
-			android:id="@id/pan_width"
-			android:inputType="numberDecimal"
-			android:layout_toEndOf="@id/pan_width_label"
-			android:layout_toRightOf="@id/pan_width_label"
-			android:layout_below="@id/pan_type"
-			android:textSize="25sp"
-			android:visibility="invisible"
-			android:layout_alignParentEnd="true"
-			android:layout_alignParentRight="true"
-			android:layout_marginBottom="15dp"
-			android:layout_marginLeft="15dp"
-			android:backgroundTint="?android:textColorPrimary"
-			android:textColor="#FFFFFF"/>
-	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="50sp"
-			android:text="@string/unit_in"
-			android:textSize="25sp"
-			android:layout_alignRight="@id/pan_width"
-			android:layout_alignEnd="@id/pan_width"
-			android:layout_alignBottom="@id/pan_width"
-			android:id="@id/unit_label_pan_width"
-			android:textStyle="italic"
-			android:visibility="invisible"
-			android:textColor="?android:colorPrimary"/>
-
-	<TextView
-			android:layout_height="50sp"
-			android:layout_width="wrap_content"
-			android:id="@id/pan_length_label"
-			android:text="@string/pan_length_label"
-			android:layout_below="@id/pan_width_label"
-			android:textSize="25sp"
-			android:visibility="invisible"
-			android:labelFor="@id/pan_length"
-			android:textColor="?android:colorPrimary"/>
-	<EditText
-			android:layout_width="wrap_content"
-			android:layout_height="50sp"
-			android:id="@id/pan_length"
-			android:inputType="numberDecimal"
-			android:layout_toEndOf="@id/pan_length_label"
-			android:layout_toRightOf="@id/pan_length_label"
-			android:layout_below="@id/pan_width"
-			android:textSize="25sp"
-			android:visibility="invisible"
-			android:layout_alignParentEnd="true"
-			android:layout_alignParentRight="true"
-			android:layout_marginLeft="15dp"
-			android:backgroundTint="?android:textColorPrimary"
-			android:textColor="#FFFFFF"/>
-	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="50sp"
-			android:text="@string/unit_in"
-			android:textSize="25sp"
-			android:layout_alignRight="@id/pan_length"
-			android:layout_alignEnd="@id/pan_length"
-			android:layout_alignBottom="@id/pan_length"
-			android:id="@id/unit_label_pan_length"
-			android:textStyle="italic"
-			android:visibility="invisible"
-			android:textColor="?android:colorPrimary"/>
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/pan_type">
+		<TextView
+				android:layout_height="40sp"
+				android:layout_width="wrap_content"
+				android:id="@id/pan_width_label"
+				android:text="@string/pan_width_label"
+				android:textSize="20sp"
+				android:labelFor="@id/pan_width"
+				android:layout_marginBottom="15dp"
+				android:textColor="?android:colorPrimary"/>
+		<EditText
+				android:layout_width="5sp"
+				android:layout_height="40sp"
+				android:id="@id/pan_width"
+				android:inputType="numberDecimal"
+				android:textSize="20sp"
+				android:layout_marginBottom="15dp"
+				android:layout_marginLeft="15dp"
+				android:backgroundTint="?android:textColorPrimary"
+				android:textColor="#FFFFFF"
+				android:layout_toRightOf="@id/pan_width_label"
+				android:layout_toStartOf="@id/unit_label_pan_width"
+				android:layout_alignEnd="@id/unit_label_pan_width"/>
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="40sp"
+				android:text="@string/unit_in"
+				android:textSize="20sp"
+				android:id="@id/unit_label_pan_width"
+				android:textStyle="italic"
+				android:textColor="?android:colorPrimary"
+				android:layout_toLeftOf="@id/center"/>
+		<View 
+				android:layout_height="0sp"
+				android:layout_width="0sp"
+				android:layout_centerHorizontal="true"
+				android:visibility="invisible"
+				android:id="@id/center" />
+			
+		<TextView
+				android:layout_height="40sp"
+				android:layout_width="wrap_content"
+				android:layout_marginLeft="10sp"
+				android:id="@id/pan_length_label"
+				android:text="@string/pan_length_label"
+				android:textSize="20sp"
+				android:labelFor="@id/pan_length"
+				android:textColor="?android:colorPrimary"
+				android:layout_toRightOf="@id/center"/>
+		<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="40sp"
+				android:id="@id/pan_length"
+				android:inputType="numberDecimal"
+				android:textSize="20sp"
+				android:layout_alignParentEnd="true"
+				android:layout_alignParentRight="true"
+				android:layout_marginLeft="5dp"
+				android:layout_toRightOf="@id/pan_length_label"
+				android:backgroundTint="?android:textColorPrimary"
+				android:textColor="#FFFFFF"/>
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="40sp"
+				android:text="@string/unit_in"
+				android:textSize="20sp"
+				android:id="@id/unit_label_pan_length"
+				android:textStyle="italic"
+				android:textColor="?android:colorPrimary"
+				android:layout_alignRight="@id/pan_length"/>
+	</RelativeLayout>
 
 	<Button
 			android:layout_height="100sp"
 			android:layout_width="match_parent"
 			android:layout_alignParentBottom="true"
 			android:text="@string/calculate_button"
-			android:textSize="25sp"
+			android:textSize="20sp"
 			android:gravity="center"
 			android:onClick="calculate"/>
 </RelativeLayout>
