@@ -163,24 +163,26 @@ public class CapacityCalculator {
 	}
 
 	private double VC() {
-		if (BW / PD <= 2)
+		if (BW / PD <= 2) {
 			return 0;
-		else {
-			if (BW / PD >= 3)
+		} else {
+			if (BW / PD >= 3) {
 				return 0;
-			else
+			} else {
 				return VORC() + VMRC();
+			}
 		}
 	}
 
 	private double ZC() {
-		if (BW / PD <= 1)
+		if (BW / PD <= 1) {
 			return 0;
-		else {
-			if (BW / PD >= 2)
+		} else {
+			if (BW / PD >= 2) {
 				return 0;
-			else
+			} else {
 				return ZFC() + ZSC();
+			}
 		}
 	}
 

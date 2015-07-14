@@ -1,10 +1,14 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,12 +27,15 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		Spinner spinner = (Spinner) findViewById(R.id.pan_type);
 		ArrayAdapter<CharSequence> adapter;
 		adapter = ArrayAdapter.createFromResource(this, R.array.pan_types,
-		                                          /* android.R.layout.simple_spinner_item); */
 		                                          R.layout.layout_spinner);
 		adapter.setDropDownViewResource(R.layout.layout_spinner);
-		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
+
+		Resources r = getResources();
+		Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.app_logo);
+		ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, logo, r.getColor(R.color.primary));
+		this.setTaskDescription(description);
 	}
 
 	@Override

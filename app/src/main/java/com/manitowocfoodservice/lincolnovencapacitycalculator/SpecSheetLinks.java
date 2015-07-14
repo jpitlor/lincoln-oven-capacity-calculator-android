@@ -1,7 +1,11 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,10 +24,15 @@ public class SpecSheetLinks extends Activity implements AdapterView.OnItemClickL
 		setContentView(R.layout.layout_spec_sheet_links);
 
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spec_sheets,
-		                                                                     android.R.layout.simple_list_item_1);
+		                                                                     R.layout.layout_list_items);
 		ListView specSheetList = (ListView) findViewById(R.id.spec_sheet_link_list);
 		specSheetList.setAdapter(adapter);
 		specSheetList.setOnItemClickListener(this);
+
+		Resources r = getResources();
+		Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.app_logo);
+		ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, logo, r.getColor(R.color.primary));
+		this.setTaskDescription(description);
 	}
 
 	@Override

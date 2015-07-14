@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="spec_sheets">
-	<item>2500</item>
-	<item>Ventless 2500</item>
-	<item>1100</item>
-	<item>Ventless 1100</item>
-	<item>1400</item>
-	<item>1600</item>
-	<item>3240</item>
-	<item>3255</item>
-	<item>3270</item>
-</string-array>
+		<item>2500</item>
+		<item>Ventless 2500</item>
+		<item>1100</item>
+		<item>Ventless 1100</item>
+		<item>1400</item>
+		<item>1600</item>
+		<item>3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
 	<string-array name="spec_sheet_links">
 		<item>aximq</item>
 		<item>wymfv</item>

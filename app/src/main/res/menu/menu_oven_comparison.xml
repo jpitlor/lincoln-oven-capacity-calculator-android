@@ -4,7 +4,7 @@
 	<item android:id="@id/toggleOvens"
 		  android:title="@string/ovens"
 		  android:showAsAction="ifRoom"
-		  app:showAsAction="ifRoom" />
+		  app:showAsAction="ifRoom"/>
 	<item android:id="@id/toggleProperties"
 		  android:title="@string/toggle_columns"
 		  android:showAsAction="never"

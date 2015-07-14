@@ -1,15 +1,24 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.*;
-import android.widget.*;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,6 +33,11 @@ public class OvenComparison extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_oven_comparison);
 		showOvenPopUp();
+
+		Resources r = getResources();
+		Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.app_logo);
+		ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, logo, r.getColor(R.color.primary));
+		this.setTaskDescription(description);
 	}
 
 	@Override
