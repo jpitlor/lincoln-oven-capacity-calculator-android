@@ -4,14 +4,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.widget.*;
 
 import java.util.ArrayList;
@@ -19,14 +16,14 @@ import java.util.ArrayList;
 
 public class OvenComparison extends Activity {
 	boolean[] ovenIndices = {false, false, false, false, false, false, false};
-	boolean[] propertyIndices = {true, true, true, true, true, true, true};
+
+	boolean[] propertyIndices = {true, true, true, true, true, true};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_oven_comparison);
 		showOvenPopUp();
-		refreshProperties();
 	}
 
 	@Override
@@ -67,7 +64,7 @@ public class OvenComparison extends Activity {
 
 		new AlertDialog.Builder(activity)
 				.setTitle("Select The Ways In Which You Want To Compare The Ovens")
-				.setMultiChoiceItems(R.array.properties, propertyIndices, new DialogInterface.OnMultiChoiceClickListener() {
+				.setMultiChoiceItems(R.array.properties_no_newlines, propertyIndices, new DialogInterface.OnMultiChoiceClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 						propertyIndices[which] = isChecked;
@@ -93,7 +90,7 @@ public class OvenComparison extends Activity {
 									})
 									.show();
 						} else {
-							refreshProperties();
+							refreshModels();
 							dialog.dismiss();
 						}
 					}
@@ -108,19 +105,24 @@ public class OvenComparison extends Activity {
 				.show();
 	}
 
-	private void refreshProperties() {
-		LinearLayout propNames = (LinearLayout) findViewById(R.id.properties);
+	private void refreshModels() {
+		LinearLayout propNames = (LinearLayout) findViewById(R.id.models);
 		propNames.removeAllViews();
 
-		for(int index = 0; index < propertyIndices.length; index++) {
-			if (propertyIndices[index]) {
+		TextView title = new TextView(this);
+		title.setText("\nModel");
+		applyModelNameTheme(title);
+		propNames.addView(title);
+
+		for (int index = 0; index < ovenIndices.length; index++) {
+			if (ovenIndices[index]) {
 				TextView textView = new TextView(this);
-				textView.setText(getResources().getStringArray(R.array.properties)[index]);
-				textView.setTextAppearance(this, R.style.PropertiesTheme);
+				textView.setText(getResources().getStringArray(R.array.models_extended)[index]);
+				applyPropertyTheme(textView);
 				propNames.addView(textView);
 			}
 		}
-		refreshOvens();
+		refreshMatrix();
 	}
 
 	public void showOvenPopUp() {
@@ -155,7 +157,8 @@ public class OvenComparison extends Activity {
 									})
 									.show();
 						} else {
-							refreshOvens();
+							refreshModels();
+							refreshMatrix();
 							dialog.dismiss();
 						}
 					}
@@ -170,99 +173,98 @@ public class OvenComparison extends Activity {
 				.show();
 	}
 
-	private void refreshOvens() {
+	private void refreshMatrix() {
 		TableLayout comparisonMatrix = (TableLayout) findViewById(R.id.comparison_grid);
 		comparisonMatrix.removeAllViews();
 
 		ArrayList<Integer> modelsToCompare = new ArrayList<>();
 		for (int index = 0; index < ovenIndices.length; index++) {
-			if (ovenIndices[index]) modelsToCompare.add(index);
-		}
-
-		Resources resources = getResources();
-
-		// Models
-		if (propertyIndices[0]) {
-			TableRow models = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.models_extended)[modelsToCompare.get(index)]);
-				model.setTextAppearance(this, R.style.ModelsTheme);
-				models.addView(model);
+			if (ovenIndices[index]) {
+				modelsToCompare.add(index);
 			}
-			comparisonMatrix.addView(models);
 		}
 
-		// Belt Width
-		if (propertyIndices[1]) {
-			TableRow beltWidths = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.belt_widths)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				beltWidths.addView(model);
+		ArrayList<Integer> propsToUse = new ArrayList<>();
+		for (int index = 0; index < propertyIndices.length; index++) {
+			if (propertyIndices[index]) {
+				propsToUse.add(index);
 			}
-			comparisonMatrix.addView(beltWidths);
 		}
 
-		// Chamber Length
-		if (propertyIndices[2]) {
-			TableRow chamberLengths = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.chamber_lengths)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				chamberLengths.addView(model);
-			}
-			comparisonMatrix.addView(chamberLengths);
-		}
+		Resources r = getResources();
 
-		// Stacking
-		if (propertyIndices[3]) {
-			TableRow stacking = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.stacking)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				stacking.addView(model);
-			}
-			comparisonMatrix.addView(stacking);
+		TableRow properties = new TableRow(this);
+		for (int prop : propsToUse) {
+			String propName = r.getStringArray(R.array.properties)[prop];
+			TextView property = new TextView(this);
+			property.setText(propName);
+			applyModelNameTheme(property);
+			properties.addView(property);
 		}
+		comparisonMatrix.addView(properties);
 
-		// Gas/Electric
-		if (propertyIndices[4]) {
-			TableRow gasElectric = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.gas_elec)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				gasElectric.addView(model);
-			}
-			comparisonMatrix.addView(gasElectric);
-		}
+		for (int ovenIndex : modelsToCompare) {
+			TableRow row = new TableRow(this);
 
-		// Electric Ventless Available
-		if (propertyIndices[5]) {
-			TableRow elecVentless = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.elec_ventless_avail)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				elecVentless.addView(model);
-			}
-			comparisonMatrix.addView(elecVentless);
-		}
+			for (int propertyIndex : propsToUse) {
+				TextView cell = new TextView(this);
+				cell.setText(r.getStringArray(getPropertyArray(propertyIndex))[ovenIndex]);
+				applyTheme(cell);
 
-		// Half Pass Door
-		if (propertyIndices[6]) {
-			TableRow halfPassDoor = new TableRow(this);
-			for (int index = 0; index < modelsToCompare.size(); index++) {
-				TextView model = new TextView(this);
-				model.setText(resources.getStringArray(R.array.half_pass_door)[modelsToCompare.get(index)]);
-				model.setTextColor(resources.getColor(R.color.white));
-				halfPassDoor.addView(model);
+				row.addView(cell);
 			}
-			comparisonMatrix.addView(halfPassDoor);
+			comparisonMatrix.addView(row);
 		}
+	}
+
+	private int getPropertyArray(int index) {
+		switch (index) {
+			case 0:
+				return R.array.belt_widths;
+			case 1:
+				return R.array.chamber_lengths;
+			case 2:
+				return R.array.stacking;
+			case 3:
+				return R.array.gas_elec;
+			case 4:
+				return R.array.elec_ventless_avail;
+			default:
+				return R.array.half_pass_door;
+		}
+	}
+
+	private void applyPropertyTheme(TextView text) {
+		text.setTextColor(getResources().getColor(R.color.primary));
+		text.setTextSize(25);
+		text.setHeight((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics()));
+		text.setGravity(Gravity.CENTER);
+		text.setPadding(30, 0, 30, 0);
+	}
+
+	private void applyModelNameTheme(TextView text) {
+		text.setTextColor(getResources().getColor(R.color.textPrimary));
+		text.setTextSize(25);
+		text.setHeight((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 80, getResources().getDisplayMetrics()));
+		text.setGravity(Gravity.CENTER);
+		text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+		text.setPadding(30, 0, 30, 0);
+	}
+
+	private void applyTheme(TextView text) {
+		text.setTextColor(getResources().getColor(R.color.white));
+		text.setTextSize(30);
+		text.setHeight((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics()));
+		text.setGravity(Gravity.CENTER);
+		text.setTypeface(text.getTypeface(), Typeface.BOLD);
+		text.setPadding(30, 0, 30, 0);
+	}
+
+	public void showOvenPopUp(View view) {
+		showOvenPopUp();
+	}
+
+	public void showPropertyPopUp(View view) {
+		showPropertyPopUp();
 	}
 }

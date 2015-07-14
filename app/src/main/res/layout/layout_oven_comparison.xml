@@ -7,16 +7,46 @@
 	<LinearLayout
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@id/properties"
+			android:id="@id/models"
 			android:orientation="vertical"
 			android:layout_alignParentTop="true">
 	</LinearLayout>
-	<TableLayout
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:id="@id/comparison_grid"
-			android:layout_toRightOf="@id/properties"
-			android:layout_toEndOf="@id/properties"
-			android:layout_alignParentTop="true">
-	</TableLayout>
+	<HorizontalScrollView android:layout_width="match_parent"
+						  android:layout_height="wrap_content"
+						  android:layout_toRightOf="@id/models"
+						  android:layout_toEndOf="@id/models"
+						  android:layout_alignParentTop="true">
+		<TableLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@id/comparison_grid">
+		</TableLayout>
+	</HorizontalScrollView>
+	<View
+			android:layout_width="0sp"
+			android:layout_height="0sp"
+			android:layout_centerInParent="true"
+			android:id="@id/center"/>
+	<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:id="@id/button_toggle_ovens"
+			android:onClick="showOvenPopUp"
+			android:layout_alignRight="@id/center"
+			android:layout_alignEnd="@id/center"
+			android:text="@string/button_toggle_ovens"/>
+	<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true"
+			android:id="@id/button_toggle_props"
+			android:onClick="showPropertyPopUp"
+			android:layout_alignStart="@id/center"
+			android:layout_alignLeft="@id/center"
+			android:text="@string/button_toggle_props"/>
 </RelativeLayout>

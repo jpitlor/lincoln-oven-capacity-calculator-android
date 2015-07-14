@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="spec_sheets">
+	<item>2500</item>
+	<item>Ventless 2500</item>
+	<item>1100</item>
+	<item>Ventless 1100</item>
+	<item>1400</item>
+	<item>1600</item>
+	<item>3240</item>
+	<item>3255</item>
+	<item>3270</item>
+</string-array>
+	<string-array name="spec_sheet_links">
+		<item>aximq</item>
+		<item>wymfv</item>
+		<item>edtmx</item>
+		<item>qampl</item>
+		<item>fcdcn</item>
+		<item>prgda</item>
+		<item>ojjww</item>
+		<item>cqier</item>
+		<item>hepix</item>
+	</string-array>
+
+	<string-array name="models">
+		<item>2500</item>
+		<item>1100</item>
+		<item>1400/1600/3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
+	<string-array name="model_sizes">
+		<item>16</item>
+		<item>20.5</item>
+		<item>18</item>
+		<item>28.25</item>
+		<item>32</item>
+		<item>40.1875</item>
+		<item>32</item>
+		<item>55</item>
+		<item>32</item>
+		<item>70</item>
+	</string-array>
+	<string-array name="pan_types">
+		<item>Select Pan Type</item>
+		<item>Round</item>
+		<item>Rectangular</item>
+	</string-array>
+
+	<string-array name="models_extended">
+		<item>2500</item>
+		<item>1100</item>
+		<item>1400</item>
+		<item>1600</item>
+		<item>3240</item>
+		<item>3255</item>
+		<item>3270</item>
+	</string-array>
+	<string-array name="properties">
+		<item>Belt\nWidth</item>
+		<item>Chamber\nLength</item>
+		<item>\nStacking</item>
+		<item>Gas Or\nElectric</item>
+		<item>Electric\nVentless</item>
+		<item>Has Half\nPass Door</item>
+	</string-array>
+	<string-array name="properties_no_newlines">
+		<item>Belt Width</item>
+		<item>Chamber Length</item>
+		<item>Stacking</item>
+		<item>Gas Or Electric</item>
+		<item>Electric Ventless</item>
+		<item>Has Half Pass Door</item>
+	</string-array>
+	<string-array name="belt_widths">
+		<item>16</item>
+		<item>18</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+		<item>32</item>
+	</string-array>
+	<string-array name="chamber_lengths">
+		<item>20</item>
+		<item>28</item>
+		<item>40</item>
+		<item>40</item>
+		<item>40</item>
+		<item>55</item>
+		<item>70</item>
+	</string-array>
+	<string-array name="stacking">
+		<item>Double</item>
+		<item>Triple</item>
+		<item>Double</item>
+		<item>Triple</item>
+		<item>Triple</item>
+		<item>Triple</item>
+		<item>Triple</item>
+	</string-array>
+	<string-array name="gas_elec">
+		<item>Electric</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Both</item>
+		<item>Gas</item>
+		<item>Gas</item>
+	</string-array>
+	<string-array name="elec_ventless_avail">
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+		<item>No</item>
+	</string-array>
+	<string-array name="half_pass_door">
+		<item>No</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+		<item>Yes</item>
+	</string-array>
+</resources>

@@ -31,5 +31,8 @@
     <item name="toggleProperties" type="id">toggle_columns</item>
     <item name="toggleOvens" type="id">toggle_rows</item>
     <item name="comparison_grid" type="id">comparison_grid</item>
-    <item name="properties" type="id">properties</item>
+    <item name="models" type="id">properties</item>
+    <item name="button_toggle_ovens" type="id">button_toggle_ovens</item>
+    <item name="button_toggle_props" type="id">button_toggle_props</item>
+    <item name="center" type="id">center</item>
 </resources>
