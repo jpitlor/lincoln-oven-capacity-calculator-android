@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-	  xmlns:app="http://schemas.android.com/apk/res-auto">
+	  xmlns:app="http://schemas.android.com/apk/res-auto"
+	  xmlns:tools="http://schemas.android.com/tools"
+	  tools:context="com.manitowocfoodservice.lincolnovencapacitycalculator.OvenComparison">
 	<item android:id="@id/toggleOvens"
 		  android:title="@string/ovens"
 		  android:showAsAction="ifRoom"
@@ -9,12 +11,4 @@
 		  android:title="@string/toggle_columns"
 		  android:showAsAction="never"
 		  app:showAsAction="ifRoom"/>
-	<item android:id="@id/action_main_menu"
-		  android:title="@string/action_main_menu"
-		  app:showAsAction="never"
-		  android:showAsAction="never"/>
-	<item android:id="@id/action_exit"
-		  android:title="@string/action_exit"
-		  app:showAsAction="never"
-		  android:showAsAction="never"/>
 </menu>

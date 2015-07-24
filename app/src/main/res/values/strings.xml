@@ -34,4 +34,7 @@
 	<string name="ovens">Ovens</string>
 	<string name="button_toggle_props">Toggle Properties</string>
 	<string name="button_toggle_ovens">Toggle Ovens</string>
+	<string name="title_activity_spec_sheet">SpecSheet</string>
+
+	<string name="hello_world">Hello world!</string>
 </resources>

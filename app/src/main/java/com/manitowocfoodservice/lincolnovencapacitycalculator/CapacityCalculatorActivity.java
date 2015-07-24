@@ -47,16 +47,6 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.action_main_menu:
-				Intent intent = new Intent(this, MainMenu.class);
-				startActivity(intent);
-				return true;
-			case R.id.action_exit:
-				Intent intentt = new Intent(Intent.ACTION_MAIN);
-				intentt.addCategory(Intent.CATEGORY_HOME);
-				intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(intentt);
-				return true;
 			case R.id.action_use_model:
 				getChooseModelDialog().show();
 				break;
@@ -70,7 +60,7 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 				((Spinner) findViewById(R.id.pan_type)).setSelection(0);
 				break;
 		}
-		return true;
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override

@@ -35,4 +35,6 @@
 	<item name="button_toggle_ovens" type="id">button_toggle_ovens</item>
 	<item name="button_toggle_props" type="id">button_toggle_props</item>
 	<item name="center" type="id">center</item>
+	<item name="back" type="id">back</item>
+	<item name="pdfViewer" type="id">pdfViewer</item>
 </resources>

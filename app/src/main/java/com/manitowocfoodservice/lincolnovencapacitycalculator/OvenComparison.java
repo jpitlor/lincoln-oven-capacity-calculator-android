@@ -56,20 +56,10 @@ public class OvenComparison extends Activity {
 			case R.id.toggleProperties:
 				showPropertyPopUp();
 				break;
-			case R.id.action_main_menu:
-				Intent intent = new Intent(this, MainMenu.class);
-				startActivity(intent);
-				break;
-			case R.id.action_exit:
-				Intent intentt = new Intent(Intent.ACTION_MAIN);
-				intentt.addCategory(Intent.CATEGORY_HOME);
-				intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(intentt);
-				break;
 			default:
 				break;
 		}
-		return true;
+		return super.onOptionsItemSelected(item);
 	}
 
 	private void showPropertyPopUp() {

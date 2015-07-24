@@ -14,9 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-/**
- * Created by Jordan on 7/8/2015.
- */
 public class SpecSheetLinks extends Activity implements AdapterView.OnItemClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +34,14 @@ public class SpecSheetLinks extends Activity implements AdapterView.OnItemClickL
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.action_main_menu:
-				Intent intent = new Intent(this, MainMenu.class);
-				startActivity(intent);
-				return true;
-			case R.id.action_exit:
-				Intent intentt = new Intent(Intent.ACTION_MAIN);
-				intentt.addCategory(Intent.CATEGORY_HOME);
-				intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(intentt);
-				return true;
-			default:
-				return true;
-		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		String URI = "http://www.lincolnfp.com/asset/?id=";
-		URI += getResources().getStringArray(R.array.spec_sheet_links)[position];
-		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URI));
+		Intent intent = new Intent(this, SpecSheet.class);
+		String extra = getResources().getStringArray(R.array.spec_sheet_links)[position];
+		intent.putExtra("id", extra);
 		startActivity(intent);
 	}
 }
