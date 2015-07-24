@@ -4,4 +4,10 @@
 		<item name="android:colorPrimaryDark">@color/primaryDark</item>
 		<item name="android:textColorPrimary">@color/textPrimary</item>
 	</style>
+
+	<style name="MainMenuButtonTheme" parent="android:Widget.Material.Button">
+		<item name="android:layout_centerHorizontal">true</item>
+		<item name="android:padding">20dp</item>
+		<item name="android:textSize">18sp</item>
+	</style>
 </resources>

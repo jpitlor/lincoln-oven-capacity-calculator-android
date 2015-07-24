@@ -8,45 +8,43 @@
 				android:paddingTop="12dp"
 				tools:context=".Calculator"
 				android:background="@drawable/main_menu">
-
-	<ImageView
-			android:id="@id/manitowoc_logo"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_centerHorizontal="true"
-			android:contentDescription="@string/logo_description"
-			android:src="@drawable/manitowocfoodservicelogo"/>
-
-	<Button
-			android:id="@id/capacity_calculator_button"
+	<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_above="@id/oven_comparison_button"
 			android:layout_centerHorizontal="true"
-			android:padding="20dp"
+			android:background="@drawable/white">
+		<ImageView
+				android:id="@id/manitowoc_logo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:contentDescription="@string/logo_description"
+				android:layout_centerHorizontal="true"
+				android:src="@drawable/manitowocfoodservicelogo"/>
+	</RelativeLayout>
+	<Button
+			android:id="@id/capacity_calculator_button"
+			android:layout_above="@id/oven_comparison_button"
 			android:text="@string/capacity_calculator_button"
-			android:textSize="18sp"
-			android:onClick="goToCalculator"/>
+			android:onClick="goToCalculator"
+			android:theme="@style/MainMenuButtonTheme"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
 
 	<Button
 			android:id="@id/oven_comparison_button"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_centerHorizontal="true"
 			android:layout_centerVertical="true"
-			android:padding="20dp"
 			android:text="@string/oven_comparison_button"
 			android:onClick="goToCompareOvens"
-			android:textSize="18sp"/>
+			android:theme="@style/MainMenuButtonTheme"/>
 
 	<Button
 			android:id="@id/spec_sheet_link_button"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_below="@id/oven_comparison_button"
-			android:layout_centerHorizontal="true"
-			android:padding="20dp"
 			android:text="@string/spec_sheet_links_button"
-			android:textSize="18sp"
-			android:onClick="goToSpecSheets"/>
+			android:onClick="goToSpecSheets"
+			android:theme="@style/MainMenuButtonTheme"/>
 </RelativeLayout>

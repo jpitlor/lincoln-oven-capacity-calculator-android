@@ -37,4 +37,5 @@
 	<item name="center" type="id">center</item>
 	<item name="back" type="id">back</item>
 	<item name="pdfViewer" type="id">pdfViewer</item>
+	<item name="progressBar" type="id">progress_bar</item>
 </resources>
