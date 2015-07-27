@@ -130,7 +130,7 @@ public class CapacityCalculator {
 	/**
 	 * Number of Straight Across Pans
 	 *
-	 * @return double
+	 * @return integer
 	 */
 	private int NSAP() {
 		return (int) (BW / PD);
@@ -139,7 +139,7 @@ public class CapacityCalculator {
 	/**
 	 * Number of Rows of Sixty Degree Pans Across BW
 	 *
-	 * @return double
+	 * @return integer
 	 */
 	private int NSDP() {
 		return (int) ((BW - PD) / (Math.sin(60 * Math.PI / 180) * PD) + 1);
@@ -148,7 +148,7 @@ public class CapacityCalculator {
 	/**
 	 * Number of Odd Rows of Sixty Degree Pans
 	 *
-	 * @return double
+	 * @return integer
 	 */
 	private int NOSP() {
 		return Math.round(NSDP() / 2);
