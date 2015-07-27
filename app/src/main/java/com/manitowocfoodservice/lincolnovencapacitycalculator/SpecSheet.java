@@ -26,6 +26,7 @@ public class SpecSheet extends Activity {
 		});
 
 		webView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdf);
+		getActionBar().setTitle(getResources().getStringArray(R.array.spec_sheets)[getIntent().getIntExtra("position", 0)] + " Spec Sheet");
 	}
 
 	@Override

@@ -5,7 +5,6 @@ import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -125,48 +124,6 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		// Do nothing
 	}
 
-	public void calculate(View view) {
-		Spinner panTypeSpinner = (Spinner) findViewById(R.id.pan_type);
-		if (panTypeSpinner.getSelectedItemPosition() == 1) {
-			((EditText) findViewById(R.id.pan_length)).setText("0");
-			((EditText) findViewById(R.id.pan_width)).setText("0");
-		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {
-			((EditText) findViewById(R.id.pan_diameter)).setText("0");
-		}
-
-		if (anyInputsBlank()) {
-			throwError();
-			return;
-		}
-		double beltWidth = Double.parseDouble(((EditText) findViewById(R.id.belt_width)).getText().toString());
-		double ovenCapacity = Double.parseDouble(((EditText) findViewById(R.id.oven_capacity)).getText().toString());
-		double bakeTime = Double.parseDouble(((EditText) findViewById(R.id.bake_time)).getText().toString());
-
-		double capacity;
-
-		if (panTypeSpinner.getSelectedItemPosition() == 1) { // Round pan
-			double diameter = Double.parseDouble(((EditText) findViewById(R.id.pan_diameter)).getText().toString());
-
-			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, diameter).calculateCapacity();
-		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {// Rectangular pan
-			double length = Double.parseDouble(((EditText) findViewById(R.id.pan_length)).getText().toString());
-			double width = Double.parseDouble(((EditText) findViewById(R.id.pan_width)).getText().toString());
-
-			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, length, width).calculateCapacity();
-		} else {
-			capacity = 0.0;
-		}
-
-		new AlertDialog.Builder(this)
-				.setMessage("The capacity is " + capacity + " pans/hour")
-				.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.dismiss();
-					}
-				}).show();
-	}
-
 	private boolean anyInputsBlank() {
 		EditText beltWidth = (EditText) findViewById(R.id.belt_width);
 		boolean bw = beltWidth.getText().toString().equals("");
@@ -230,5 +187,47 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		});
 
 		return builder.create();
+	}
+
+	public void calculate(View view) {
+		Spinner panTypeSpinner = (Spinner) findViewById(R.id.pan_type);
+		if (panTypeSpinner.getSelectedItemPosition() == 1) {
+			((EditText) findViewById(R.id.pan_length)).setText("0");
+			((EditText) findViewById(R.id.pan_width)).setText("0");
+		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {
+			((EditText) findViewById(R.id.pan_diameter)).setText("0");
+		}
+
+		if (anyInputsBlank()) {
+			throwError();
+			return;
+		}
+		double beltWidth = Double.parseDouble(((EditText) findViewById(R.id.belt_width)).getText().toString());
+		double ovenCapacity = Double.parseDouble(((EditText) findViewById(R.id.oven_capacity)).getText().toString());
+		double bakeTime = Double.parseDouble(((EditText) findViewById(R.id.bake_time)).getText().toString());
+
+		double capacity;
+
+		if (panTypeSpinner.getSelectedItemPosition() == 1) { // Round pan
+			double diameter = Double.parseDouble(((EditText) findViewById(R.id.pan_diameter)).getText().toString());
+
+			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, diameter).calculateCapacity();
+		} else if (panTypeSpinner.getSelectedItemPosition() == 2) {// Rectangular pan
+			double length = Double.parseDouble(((EditText) findViewById(R.id.pan_length)).getText().toString());
+			double width = Double.parseDouble(((EditText) findViewById(R.id.pan_width)).getText().toString());
+
+			capacity = new CapacityCalculator(beltWidth, ovenCapacity, bakeTime, length, width).calculateCapacity();
+		} else {
+			capacity = 0.0;
+		}
+
+		new AlertDialog.Builder(this)
+				.setMessage("The capacity is " + capacity + " pans/hour")
+				.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				}).show();
 	}
 }

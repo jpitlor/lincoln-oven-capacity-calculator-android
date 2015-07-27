@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,7 +34,7 @@ public class OvenComparison extends Activity {
 		showOvenPopUp();
 
 		Resources r = getResources();
-		Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.app_logo);
+		Bitmap logo = BitmapFactory.decodeResource(r, R.mipmap.app_logo);
 		ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, logo, r.getColor(R.color.primary));
 		this.setTaskDescription(description);
 	}

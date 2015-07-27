@@ -38,4 +38,5 @@
 	<item name="back" type="id">back</item>
 	<item name="pdfViewer" type="id">pdfViewer</item>
 	<item name="progressBar" type="id">progress_bar</item>
+	<item name="logolayout" type="id">logo_layout</item>
 </resources>

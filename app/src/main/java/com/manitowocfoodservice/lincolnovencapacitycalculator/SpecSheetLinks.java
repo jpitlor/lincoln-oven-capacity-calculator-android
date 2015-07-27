@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +41,7 @@ public class SpecSheetLinks extends Activity implements AdapterView.OnItemClickL
 		Intent intent = new Intent(this, SpecSheet.class);
 		String extra = getResources().getStringArray(R.array.spec_sheet_links)[position];
 		intent.putExtra("id", extra);
+		intent.putExtra("position", position);
 		startActivity(intent);
 	}
 }
