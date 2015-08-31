@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LincolnOvenCapacityCalculator.iml" filepath="$PROJECT_DIR$/LincolnOvenCapacityCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lincoln-Oven-Capacity-Calculator-Android.iml" filepath="$PROJECT_DIR$/Lincoln-Oven-Capacity-Calculator-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -1,14 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-	  xmlns:app="http://schemas.android.com/apk/res-auto"
-	  xmlns:tools="http://schemas.android.com/tools"
-	  tools:context="com.manitowocfoodservice.lincolnovencapacitycalculator.OvenComparison">
-	<item
-			android:id="@id/action_use_model"
-			android:title="@string/choose_model"
-			android:showAsAction="ifRoom"
-			app:showAsAction="ifRoom"/>
-	<item
-			android:id="@id/action_clear"
-			android:title="@string/clear"
-			app:showAsAction="ifRoom"/>
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.manitowocfoodservice.lincolnovencapacitycalculator.OvenComparison">
+    <item
+        android:id="@id/action_use_model"
+        android:showAsAction="ifRoom"
+        android:title="@string/choose_model"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@id/action_clear"
+        android:showAsAction="ifRoom"
+        android:title="@string/clear"
+        app:showAsAction="ifRoom"/>
 </menu>

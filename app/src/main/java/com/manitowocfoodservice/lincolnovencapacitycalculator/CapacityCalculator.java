@@ -67,7 +67,7 @@ public class CapacityCalculator {
 	 * @param panDiameter  input - {@see PD}
 	 */
 	public CapacityCalculator(double beltWidth, double ovenCapacity, double bakeTime,
-	                          double panDiameter) {
+							  double panDiameter) {
 		this.BW = beltWidth;
 		this.OC = ovenCapacity;
 		this.BT = bakeTime;
@@ -88,7 +88,7 @@ public class CapacityCalculator {
 	 * @param panLength    input - {@see PL}
 	 */
 	public CapacityCalculator(double beltWidth, double ovenCapacity, double bakeTime,
-	                          double panWidth, double panLength) {
+							  double panWidth, double panLength) {
 		this.BW = beltWidth;
 		this.OC = ovenCapacity;
 		this.BT = bakeTime;

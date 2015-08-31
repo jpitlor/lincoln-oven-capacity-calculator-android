@@ -1,11 +1,11 @@
 <resources>
-	<style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
-		<item name="android:colorPrimary">@color/primary</item>
-		<item name="android:colorPrimaryDark">@color/primaryDark</item>
+	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="colorPrimary">@color/primary</item>
+		<item name="colorPrimaryDark">@color/primaryDark</item>
 		<item name="android:textColorPrimary">@color/textPrimary</item>
 	</style>
 
-	<style name="MainMenuButtonTheme" parent="android:Widget.Material.Button">
+	<style name="MainMenuButtonTheme" parent="Widget.AppCompat.Button">
 		<item name="android:layout_centerHorizontal">true</item>
 		<item name="android:padding">20dp</item>
 		<item name="android:textSize">18sp</item>

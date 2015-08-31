@@ -1,14 +1,14 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class SpecSheet extends Activity {
+public class SpecSheet extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class SpecSheet extends Activity {
 		});
 
 		webView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdf);
-		getActionBar().setTitle(getResources().getStringArray(R.array.spec_sheets)[getIntent().getIntExtra("position", 0)] + " Spec Sheet");
+		getSupportActionBar().setTitle(getResources().getStringArray(R.array.spec_sheets)[getIntent().getIntExtra("position", 0)] + " Spec Sheet");
 	}
 
 	@Override

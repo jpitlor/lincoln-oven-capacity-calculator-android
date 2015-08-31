@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
@@ -22,7 +23,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class OvenComparison extends Activity {
+public class OvenComparison extends AppCompatActivity {
 	boolean[] ovenIndices = {false, false, false, false, false, false, false};
 
 	boolean[] propertyIndices = {true, true, true, true, true, true};

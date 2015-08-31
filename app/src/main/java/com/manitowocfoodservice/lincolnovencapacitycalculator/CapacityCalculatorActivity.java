@@ -1,6 +1,5 @@
 package com.manitowocfoodservice.lincolnovencapacitycalculator;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,13 +8,18 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 
-public class CapacityCalculatorActivity extends Activity implements AdapterView.OnItemSelectedListener {
+public class CapacityCalculatorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 	int position = 0;
 
 	@Override
@@ -26,7 +30,7 @@ public class CapacityCalculatorActivity extends Activity implements AdapterView.
 		Spinner spinner = (Spinner) findViewById(R.id.pan_type);
 		ArrayAdapter<CharSequence> adapter;
 		adapter = ArrayAdapter.createFromResource(this, R.array.pan_types,
-		                                          R.layout.layout_spinner);
+				R.layout.layout_spinner);
 		adapter.setDropDownViewResource(R.layout.layout_spinner);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
